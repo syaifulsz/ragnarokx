@@ -42,7 +42,8 @@ module.exports = function(grunt) {
                 files: {
                     'dist/scripts/global.min.js': [
                         'build/scripts/libs.min.js',
-                        'src/scripts/global.js'
+                        'src/scripts/global.js',
+                        'src/scripts/components/welcome.js'
                     ]
                 }
             }
@@ -52,6 +53,15 @@ module.exports = function(grunt) {
             css: {
                 files: ['**/*.{sass,scss}'],
                 tasks: ['sass'],
+                options: {
+                    spawn: false,
+                    livereload: true,
+                    interrupt: true
+                },
+            },
+            js: {
+                files: ['**/*.js'],
+                tasks: ['uglify:global'],
                 options: {
                     spawn: false,
                     livereload: true,
@@ -68,6 +78,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('default', ['sass', 'uglify']);
 
 };
