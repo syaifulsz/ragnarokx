@@ -1,0 +1,9 @@
+@mixin make-grid-padding($sizes: 15 30)
+    @each $size in $sizes
+        .padding-#{$size}--block-grid
+            margin-left: -#{$size}px
+            margin-right: -#{$size}px
+
+            .block-grid__item
+                padding-left: #{$size}px
+                padding-right: #{$size}px

@@ -1,0 +1,27 @@
+@import mixins/block-grid
+
+$sizes: 10 15 30
+
+.block-grid
+    display: table
+    width: 100%
+    table-layout: fixed
+
+.block-grid--center
+
+    &.block-grid
+        width: auto
+        margin-left: auto
+        margin-right: auto
+
+.block-grid__item
+    display: table-cell
+    vertical-align: top
+
+.block-grid__item--middle
+    vertical-align: middle
+
+.block-grid__item--fit
+    width: 1px
+
+@include make-grid-padding($sizes)

@@ -1,0 +1,51 @@
+// Bootstrap helper for blocks
+// -----------------------------------------------------------------------------
+// This is a responsive helper for adding width to inline block. The widths are
+// calculated based on element parent container and are based on 12 grid
+// columns.
+//
+// These helper supports Bootstrap 3 responsive utilities (xs, sm, md, lg).
+// Additional media queries is configurable and can be extended depending on
+// your project requirements.
+//
+// Example usage:
+// -----------------------------------------------------------------------------
+// .block, .block--1-5, .block--2-3
+//
+// Example usage with responsive media query:
+// -----------------------------------------------------------------------------
+// .block-xs, .block-sm--1-5, .block-md--2-5
+//
+//
+// @author: Syaiful Shah Zinan (i.works@live.com)
+// @link: https://github.com/syaifulsz/bootstrap-helper-blocks
+// @since: 1.0.1
+
+@import mixins/block
+
+$helper-blocks--global: true !default
+$helper-blocks--xs: true !default
+$helper-blocks--sm: true !default
+$helper-blocks--md: true !default
+$helper-blocks--lg: true !default
+$grid: 12
+$prefix: 'block'
+
+@if $helper-blocks--global
+    @include make-block($prefix, $grid)
+
+@if $helper-blocks--xs
+    @media (max-width: $screen-xs-max)
+        @include make-block($prefix, $grid, '-xs')
+
+@if $helper-blocks--sm
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+        @include make-block($prefix, $grid, '-sm')
+
+@if $helper-blocks--md
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+        @include make-block($prefix, $grid, '-md')
+
+@if $helper-blocks--lg
+    @media (min-width: $screen-lg-min)
+        @include make-block($prefix, $grid, '-lg')
