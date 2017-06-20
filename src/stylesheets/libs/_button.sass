@@ -1,0 +1,21 @@
+.btn--is-default
+    @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border)
+
+.btn--is-primary
+    @include button-variant(#333333, #FFDB00, #FFDB00)
+
+// Success appears as green
+.btn--is-success
+    @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border)
+
+// Info appears as blue-green
+.btn--is-info
+    @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border)
+
+// Warning appears as orange
+.btn--is-warning
+    @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border)
+
+// Danger and error appear as red
+.btn--is-danger
+    @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border)

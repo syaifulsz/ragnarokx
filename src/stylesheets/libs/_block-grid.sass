@@ -1,27 +1,24 @@
-@import mixins/block-grid
+.row
 
-$sizes: 10 15 30
+    &.row--is-gutterless
+        margin-left: 0
+        margin-right: 0
 
-.block-grid
-    display: table
-    width: 100%
-    table-layout: fixed
+        > [class^="col-"],
+        > [class*=" col-"]
+            padding-left: 0
+            padding-right: 0
 
-.block-grid--center
+$grid-columns: 10
+.row--is-10
+    @include make-row
+    @include make-grid-columns
+    @include make-grid(xs)
+    @media (min-width: $screen-sm-min)
+        @include make-grid(sm)
+    @media (min-width: $screen-md-min)
+        @include make-grid(md)
+    @media (min-width: $screen-lg-min)
+        @include make-grid(lg)
 
-    &.block-grid
-        width: auto
-        margin-left: auto
-        margin-right: auto
 
-.block-grid__item
-    display: table-cell
-    vertical-align: top
-
-.block-grid__item--middle
-    vertical-align: middle
-
-.block-grid__item--fit
-    width: 1px
-
-@include make-grid-padding($sizes)

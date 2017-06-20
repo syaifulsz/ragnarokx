@@ -1,0 +1,155 @@
+.eu-header
+    background-color: #C72B34
+    height: 50px
+    @include box-shadow(0 0 10px rgba(0, 0, 0, 0.35))
+    @include clearfix()
+
+.eu-header__item
+    display: inline-block
+    float: left
+
+    &.eu-header__item--nav
+        padding-top: 7px
+        float: right
+
+.eu-header__item--brand
+    padding-top: 9px
+
+.eu-brand
+    background-image: url('../images/logo/logo-eu.svg')
+    background-repeat: no-repeat
+    display: inline-block
+    width: 512px
+    height: 108px
+
+    &.eu-brand--for-header
+        width: 142px
+        height: 30px
+
+.eu-nav
+    height: 35px
+    @include clearfix()
+
+.eu-nav__item,
+.eu-nav__item--group
+    display: inline-block
+    float: left
+    margin-right: 10px
+    height: 35px
+    line-height: 35px
+    font-weight: bold
+    color: #FFFFFF
+    text-transform: uppercase
+
+    &:hover,
+    &:focus
+        color: #FFFFFF
+        text-decoration: none
+
+    &:last-of-type
+        margin-right: 0
+
+    &.eu-nav__item--divider
+        width: 1px
+        height: 35px
+        background-color: lighten(#C72B34, 10%)
+
+    &.eu-nav__item--btn
+        background-color: #FFDB00
+        color: #FFFFFF
+        padding-left: 10px
+        padding-right: 10px
+        border-radius: 4px
+        color: #333333
+
+.eu-nav__item--group
+    position: relative
+
+
+.modal--sticky
+
+    &.modal
+
+        &.in
+
+            .modal__dialog
+                @include translate(0, 0)
+
+        .modal__dialog
+            position: relative
+            height: 100%
+            width: auto
+            margin: 0
+
+        .modal__content
+            background-color: #FFFFFF
+            width: 300px
+            border: 0
+            border-radius: 0
+            position: absolute
+            top: 0
+            height: 100%
+            box-shadow: none
+
+        .modal__header
+            background-color: #C72B34
+            color: #FFFFFF
+            font-weight: bold
+            border-bottom: 0
+
+            .close
+                opacity: 1
+                color: #FFFFFF
+                text-shadow: none
+
+.modal--sticky-right
+
+    &.modal
+
+        .modal__dialog
+            @include translate(300px, 0)
+
+        .modal__content
+            top: 0
+            right: 0
+
+.modal--sticky-left
+
+    &.modal
+
+        .modal__dialog
+            @include translate(-300px, 0)
+
+        .modal__content
+            top: 0
+            left: 0
+
+
+.eu-sidenav
+    margin-right: -15px
+
+.eu-sidenav__list,
+    margin: 0
+    padding: 0
+
+    > .eu-sidenav__item
+        margin: 0
+        padding-top: 10px
+        padding-left: 0
+        padding-right: 0
+        padding-bottom: 10px
+        list-style: none
+        border-bottom: 1px #DDDEDE solid
+
+.eu-sidenav__item
+    position: relative
+
+.eu-sidenav__icon
+    color: #DDDEDE
+    position: absolute
+    top: 6px
+    right: 0
+
+.eu-sidenav__icon--left
+    left: 0
+    right: auto

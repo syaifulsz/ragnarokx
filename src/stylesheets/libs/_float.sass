@@ -1,0 +1,19 @@
+.float--left
+    display: inline-block
+    float: left
+
+.float--right
+    display: inline-block
+    float: right
+
+.cf,
+.floats
+    zoom: 1
+
+    &::before,
+    &::after
+        content: ''
+        display: table
+
+    &::after
+        clear: both

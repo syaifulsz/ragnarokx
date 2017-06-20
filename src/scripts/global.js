@@ -1,4 +1,7 @@
 $(document).ready(function() {
 
-    // global scripts
+    // $(document).on('click', '.modal-open', function(e) {
+    //     if ($(e.target).hasClass('modal-content')) return;
+    //     $('.modal--sticky').modal('hide');
+    // });
 });

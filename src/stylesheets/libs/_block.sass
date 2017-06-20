@@ -21,31 +21,29 @@
 // @link: https://github.com/syaifulsz/bootstrap-helper-blocks
 // @since: 1.0.1
 
-@import mixins/block
-
 $helper-blocks--global: true !default
-$helper-blocks--xs: true !default
-$helper-blocks--sm: true !default
-$helper-blocks--md: true !default
-$helper-blocks--lg: true !default
-$grid: 12
-$prefix: 'block'
+$helper-blocks--xs: false !default
+$helper-blocks--sm: false !default
+$helper-blocks--md: false !default
+$helper-blocks--lg: false !default
+$helper-blocks--grid: 12 !default
+$helper-blocks--prefix: 'block' !default
 
 @if $helper-blocks--global
-    @include make-block($prefix, $grid)
+    @include make-block($helper-blocks--prefix, $helper-blocks--grid)
 
 @if $helper-blocks--xs
     @media (max-width: $screen-xs-max)
-        @include make-block($prefix, $grid, '-xs')
+        @include make-block($helper-blocks--prefix, $helper-blocks--grid, '-xs')
 
 @if $helper-blocks--sm
     @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
-        @include make-block($prefix, $grid, '-sm')
+        @include make-block($helper-blocks--prefix, $helper-blocks--grid, '-sm')
 
 @if $helper-blocks--md
     @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
-        @include make-block($prefix, $grid, '-md')
+        @include make-block($helper-blocks--prefix, $helper-blocks--grid, '-md')
 
 @if $helper-blocks--lg
     @media (min-width: $screen-lg-min)
-        @include make-block($prefix, $grid, '-lg')
+        @include make-block($helper-blocks--prefix, $helper-blocks--grid, '-lg')

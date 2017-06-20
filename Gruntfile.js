@@ -63,8 +63,7 @@ module.exports = function(grunt) {
                 files: {
                     '<%= config.dist_path %>/scripts/global.min.js': [
                         '<%= config.dist_path %>/scripts/libs.min.js',
-                        '<%= config.src_path %>/scripts/global.js',
-                        '<%= config.src_path %>/scripts/components/welcome.js'
+                        '<%= config.src_path %>/scripts/global.js'
                     ]
                 }
             }
@@ -123,7 +122,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task(s).
-    grunt.registerTask('default', ['sass', 'uglify', 'copy']);
+    grunt.registerTask('default', ['clean:dist', 'sass', 'uglify', 'copy']);
     grunt.registerTask('css', ['sass']);
     grunt.registerTask('css_dev', ['sass:dev']);
     grunt.registerTask('watch_css', ['watch:css']);

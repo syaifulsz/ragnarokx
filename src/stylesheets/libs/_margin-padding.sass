@@ -24,30 +24,28 @@
 // @link: https://github.com/syaifulsz/bootstrap-helper-margin-padding
 // @since: 1.1.0
 
-@import mixins/margin-padding
-
 $helper-margin-padding--global: true !default
-$helper-margin-padding--xs: true !default
-$helper-margin-padding--sm: true !default
-$helper-margin-padding--md: true !default
-$helper-margin-padding--lg: true !default
-$sizes: 15 30
+$helper-margin-padding--xs: false !default
+$helper-margin-padding--sm: false !default
+$helper-margin-padding--md: false !default
+$helper-margin-padding--lg: false !default
+$helper-margin-padding--sizes: 15 30 !default
 
 @if $helper-margin-padding--global
-    @include helper-margin-padding($sizes)
+    @include helper-margin-padding($helper-margin-padding--sizes)
 
 @if $helper-margin-padding--xs
     @media (max-width: $screen-xs-max)
-        @include helper-margin-padding($sizes, '-xs')
+        @include helper-margin-padding($helper-margin-padding--sizes, '-xs')
 
 @if $helper-margin-padding--sm
     @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
-        @include helper-margin-padding($sizes, '-sm')
+        @include helper-margin-padding($helper-margin-padding--sizes, '-sm')
 
 @if $helper-margin-padding--md
     @media (min-width: $screen-md-min) and (max-width: $screen-md-max)
-        @include helper-margin-padding($sizes, '-md')
+        @include helper-margin-padding($helper-margin-padding--sizes, '-md')
 
 @if $helper-margin-padding--lg
     @media (min-width: $screen-lg-min)
-        @include helper-margin-padding($sizes, '-lg')
+        @include helper-margin-padding($helper-margin-padding--sizes, '-lg')
